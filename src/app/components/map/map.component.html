@@ -1,0 +1,10 @@
+<agm-map
+  [latitude]="lat"
+  [longitude]="lng"
+  [zoom]="zoom">
+    <agm-marker 
+      [latitude]="lat" 
+      [longitude]="lng" 
+      [markerClickable]="true"
+      (markerClick)="markerClicked()"></agm-marker>
+</agm-map>

@@ -1,0 +1,42 @@
+<mat-card id="card" cdkDrag>
+    <header>
+        <mat-card-title class="title">{{title}}</mat-card-title>
+        <mat-card-subtitle class="subtitle">{{subTitle}}</mat-card-subtitle>
+    </header>
+    <mat-card-content class="card-content">
+        <mat-accordion>
+
+            <mat-expansion-panel class="info-panel" *ngFor="let infoBlock of infoBlocks; index as i;" [expanded]="i == 2">
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  {{infoBlock.title}}
+                </mat-panel-title>
+              </mat-expansion-panel-header>
+              <p *ngFor="let info of infoBlock.info;">
+
+                <mat-form-field *ngIf="info.listItems == null; else listItems">
+                    <mat-label>{{info.title}}</mat-label>
+                    <input matInput [value]="info.content">
+                </mat-form-field>
+              </p>
+
+            <ng-template #listItems>
+                <table matTable>
+                    <tr>
+                        <td>Ambulance</td>
+                        <td>Politie</td>
+                        <td>Brandweer</td>
+                    </tr>
+                    <tr>
+                        <td>1234</td>
+                        <td>5678</td>
+                        <td>9101</td>
+                    </tr>
+                </table>
+            </ng-template>
+
+            </mat-expansion-panel>
+
+          </mat-accordion>
+    </mat-card-content>
+</mat-card>
