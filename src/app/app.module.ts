@@ -22,7 +22,7 @@ import { InfoWindowComponent } from './components/info-window/info-window.compon
   imports: [
     BrowserModule,
     AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyBMT_dqxRTD_UXx5rSnGwcckETMzNLJ2NE'
+      apiKey: 'SOME_API_KEY'
     }),
     BrowserAnimationsModule,
     DragDropModule,
